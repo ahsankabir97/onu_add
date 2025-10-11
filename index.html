@@ -72,7 +72,21 @@
             font-size: 2.5em;
             font-weight: bold;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 5px; /* Reduced margin */
+        }
+        
+        /* New style for the prepared by text */
+        .prepared-by {
+            font-family: "Trebuchet MS", Trebuchet MS;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 20px; /* Added spacing below the text */
+            color: #9c27b0; /* Deep Purple for emphasis */
+            transition: color 0.3s;
+        }
+
+        body.dark-mode .prepared-by {
+            color: #ccc;
         }
 
         .theme-toggle {
@@ -267,7 +281,11 @@
 <body>
 
 <h1>ONU ADD SCRIPT</h1>
-<div class="prepared-by">Prepared By AHSANUL KABIR</div>
+
+<div class="prepared-by">
+    Prepared by AHSANUL KABIR
+</div>
+
 <div class="main-container">
     <div class="theme-toggle">
         <button onclick="toggleDarkMode()">
@@ -605,11 +623,4 @@
 </script>
 
 </body>
-
-
 </html>
-
-
-
-
-

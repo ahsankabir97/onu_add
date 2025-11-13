@@ -562,11 +562,11 @@
                     }
                     script += `onu-port-attribute ${slot} ${pon} ${onuId} ${i} ${vlan ? 'enable' : 'disable'}\n`;
                 }
-                script += `exit\nsystem\nconfigure\n`;
                 for (let i = 1; i <= onuPorts; i++) {
                     const vlan = vlanList[(i - 1)];
                     if (vlan) {
-                        script += `port-policing-config ${slot} ${pon} ${onuId} ${i} up-state enable up-parameters 99999 16384 1024 down-state enable down-parameters 99999 30720\n`;
+                        script += `port-policing-config ${slot} ${pon} ${onuId} ${i} up-state enable up-parameters 99328 16384 1024 down-state enable down-parameters 99328 99328\n`;
+                        script += `exit\nsystem\nconfigure\n`;
                         script += `max-mac-counter ${slot} ${pon} ${onuId} ${i} 10\n`;
                     }
                 }
@@ -624,3 +624,4 @@
 
 </body>
 </html>
+
